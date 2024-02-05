@@ -1,0 +1,33 @@
+#!/bin/bash
+# jewhns cast D2 forever
+SPELLS=D2
+DELAY=250
+
+TOGGLE=$HOME/.local/share/sleephunter/.d2
+active_window=$(xdotool getactivewindow)
+active_window_classname=$(xdotool getwindowclassname $active_window)
+
+if [[ $active_window_classname != "darkages.exe" ]]; then
+  echo "Darkages not the focused window, '$active_window_classname' was instead."
+  exit 1
+fi
+
+# if the toggle file exists
+if [ -e $TOGGLE ]; then
+  # deletes the toggle file
+  rm $TOGGLE
+else
+  # creates the toggle file
+  touch $TOGGLE
+fi
+
+# while the toggle file exists 
+while [ -e $TOGGLE ]; do
+  # cast your spells
+  xdotool type $SPELLS
+  # left mouse click
+  xdotool click 1
+  # pause for $DELAY (translate to ms from seconds)
+  sleep $(($DELAY / 1000))
+done
+

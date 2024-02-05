@@ -1,0 +1,15 @@
+#!/bin/bash
+# jewhns triple dion trinket
+DION=ga222D
+
+active_window=$(xdotool getactivewindow)
+active_window_classname=$(xdotool getwindowclassname $active_window)
+
+if [[ $active_window_classname != "darkages.exe" ]]; then
+  echo "Darkages not the focused window, '$active_window_classname' was instead."
+  exit 1
+fi
+
+xdotool click 1
+xdotool type $DION
+

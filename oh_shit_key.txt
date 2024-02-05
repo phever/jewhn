@@ -1,0 +1,6 @@
+# Keybind "END" key to:
+
+pkill -f sleephunter
+
+this will kill all processess with "sleephunter" in their name, which your scripts will, since that's the directory they're running from :)
+

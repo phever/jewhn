@@ -3,10 +3,10 @@
 ARENA_COMBO=d0S3s821S54s50a3S21
 
 active_window=$(xdotool getactivewindow)
-active_window_classname=$(xdotool getwindowclassname $active_window)
+darkages_window=$(xdotool search --name "Darkages")
 
-if [[ $active_window_classname != "darkages.exe" ]]; then
-  echo "Darkages not the focused window, '$active_window_classname' was instead."
+if [[ $active_window != $darkages_window ]]; then
+  echo "Darkages not the focused window."
   exit 1
 fi
 

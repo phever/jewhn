@@ -5,7 +5,7 @@ DELAY=1250
 
 TOGGLE=$HOME/.local/share/sleephunter/.frostarrow
 active_window=$(xdotool getactivewindow)
-darkages_window=$(xdotool search --class "darkages.exe")
+darkages_window=$(xdotool search --name "Darkages")
 
 if [[ $active_window != $darkages_window ]]; then
   echo "Darkages not the focused window."

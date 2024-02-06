@@ -8,6 +8,8 @@ darkages_window=$(xdotool search --name "Darkages")
 
 if [[ $active_window != $darkages_window ]]; then
   echo "Darkages not the focused window."
+  # pass normal key press
+  xdotool key plus
   exit 1
 fi
 

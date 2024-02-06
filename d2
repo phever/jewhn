@@ -2,6 +2,7 @@
 # jewhns cast D2 forever
 SPELLS=D2
 DELAY=250
+HOTKEY=KP_Decimal
 
 TOGGLE=$HOME/.local/share/sleephunter/.d2
 active_window=$(xdotool getactivewindow)
@@ -11,6 +12,8 @@ if [[ $active_window != $darkages_window ]]; then
   echo "Darkages not the focused window."
   exit 1
 fi
+
+xdotool keyup $HOTKEY
 
 # if the toggle file exists
 if [ -e $TOGGLE ]; then

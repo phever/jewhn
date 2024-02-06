@@ -1,6 +1,7 @@
 #!/bin/bash
 # jewhns aos
 AOS=h9a68d
+HOTKEY=KP_Multiply
 
 active_window=$(xdotool getactivewindow)
 darkages_window=$(xdotool search --name "Darkages")
@@ -10,5 +11,6 @@ if [[ $active_window != $darkages_window ]]; then
   exit 1
 fi
 
+xdotool keyup $HOTKEY
 xdotool type $AOS
 

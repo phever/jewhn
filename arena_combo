@@ -1,6 +1,7 @@
 #!/bin/bash
 # jewhns arena combo
 ARENA_COMBO=d0S3s821S54s50a3S21
+HOTKEY=KP_Add
 
 active_window=$(xdotool getactivewindow)
 darkages_window=$(xdotool search --name "Darkages")
@@ -10,5 +11,6 @@ if [[ $active_window != $darkages_window ]]; then
   exit 1
 fi
 
+xdotool keyup $HOTKEY
 xdotool type $ARENA_COMBO
 

@@ -2,6 +2,7 @@
 # jewhns cast frost arrow forever
 SPELLS=D3
 DELAY=1250
+HOTKEY=KP_Enter
 
 TOGGLE=$HOME/.local/share/sleephunter/.frostarrow
 active_window=$(xdotool getactivewindow)
@@ -11,6 +12,8 @@ if [[ $active_window != $darkages_window ]]; then
   echo "Darkages not the focused window."
   exit 1
 fi
+
+xdotool keyup $HOTKEY
 
 # if the toggle file exists
 if [ -e $TOGGLE ]; then

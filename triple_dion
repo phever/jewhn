@@ -6,13 +6,14 @@ HOTKEY=KP_Subtract
 active_window=$(xdotool getactivewindow)
 darkages_window=$(xdotool search --name "Darkages")
 
+xdotool keyup $HOTKEY
+
 if [[ $active_window != $darkages_window ]]; then
   echo "Darkages not the focused window."
   xdotool key minus
   exit 1
 fi
 
-xdotool keyup $HOTKEY
 xdotool click 1
 xdotool type $DION
 

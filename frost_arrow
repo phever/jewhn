@@ -8,14 +8,14 @@ TOGGLE=$HOME/.local/share/sleephunter/.frostarrow
 active_window=$(xdotool getactivewindow)
 darkages_window=$(xdotool search --name "Darkages")
 
+xdotool keyup $HOTKEY
+
 if [[ $active_window != $darkages_window ]]; then
   echo "Darkages not the focused window."
   # pass through "normal" keypress
   xdotool key Return 
   exit 1
 fi
-
-xdotool keyup $HOTKEY
 
 # if the toggle file exists
 if [ -e $TOGGLE ]; then

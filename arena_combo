@@ -6,6 +6,8 @@ HOTKEY=KP_Add
 active_window=$(xdotool getactivewindow)
 darkages_window=$(xdotool search --name "Darkages")
 
+xdotool keyup $HOTKEY
+
 if [[ $active_window != $darkages_window ]]; then
   echo "Darkages not the focused window."
   # pass normal key press
@@ -13,6 +15,5 @@ if [[ $active_window != $darkages_window ]]; then
   exit 1
 fi
 
-xdotool keyup $HOTKEY
 xdotool type $ARENA_COMBO
 

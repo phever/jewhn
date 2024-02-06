@@ -1,5 +1,5 @@
 #!/bin/bash
-# jewhns aos
+# jewhns arena combo
 ARENA_COMBO=d0S3s821S54s50a3S21
 
 active_window=$(xdotool getactivewindow)
